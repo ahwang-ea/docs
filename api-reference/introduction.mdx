@@ -1,33 +1,54 @@
 ---
 title: 'Introduction'
-description: 'Example section for showcasing API endpoints'
+description: 'Overview of the Find AI Search API'
 ---
-
-<Note>
-  If you're not looking to build API reference documentation, you can delete
-  this section by removing the api-reference folder.
-</Note>
 
 ## Welcome
 
-There are two ways to build API documentation: [OpenAPI](https://mintlify.com/docs/api-playground/openapi/setup) and [MDX components](https://mintlify.com/docs/api-playground/mdx/configuration). For the starter kit, we are using the following OpenAPI specification.
+The [Find AI](/) Search API allows you to programmatically run searches on Find AI and integrate the results into your application. With the API, you have more control and can access additional data compared to the web interface.
 
-<Card
-  title="Plant Store Endpoints"
-  icon="leaf"
-  href="https://github.com/mintlify/starter/blob/main/api-reference/openapi.json"
->
-  View the OpenAPI specification file
-</Card>
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/watch?v=Z6sEHoD8QQk"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
 
-## Authentication
 
-All API endpoints are authenticated using Bearer tokens and picked up from the specification file.
+## Getting Started
 
-```json
-"security": [
-  {
-    "bearerAuth": []
-  }
-]
-```
+To get started with the Find AI API, follow these steps:
+
+1. Go to the [Find AI Dashboard](https://usefind.ai/dashboard) and create a new workspace.
+2. Set up billing for your workspace. Billing is usage-based, and you'll be charged per match found in your searches.
+3. Issue an API key for your workspace. Make sure to choose the appropriate environment (demo or live mode).
+
+<Note>
+  Demo mode is free to set up and try, but it returns dummy data. To access real data, you need to set up billing and use a live mode API key.
+</Note>
+
+## API Overview
+
+The Find AI API uses REST and provides an OpenAPI specification for easy integration with your application. The API consists of two main endpoints:
+
+1. **Search Creation**: Create a new search by providing a query, scope (people or companies), result mode (exact or best), and maximum number of matches.
+2. **Search Retrieval**: Retrieve the results of a previously created search using the provided token.
+
+The search process is asynchronous. When you create a search, you'll receive a token that you can use to poll for the search results. Typically, the results are available within a few seconds.
+
+## Client Libraries
+
+To simplify integration with your application, Find AI provides client libraries in various programming languages. You can find the client libraries on [GitHub](https://github.com/find-ai).
+
+Currently, client libraries are available for:
+
+- [Ruby](https://github.com/find-ai/find-ai-ruby)
+- [Node.js](https://github.com/find-ai/find-ai-node)
+- [Python](https://github.com/find-ai/find-ai-python)
+- [Go](https://github.com/find-ai/find-ai-go)
+
+If you need support for a different programming language, please reach out to us at [help@usefind.ai](mailto:help@usefind.ai).
+
